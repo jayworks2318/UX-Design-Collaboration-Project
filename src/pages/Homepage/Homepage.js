@@ -36,7 +36,7 @@ export default function Homepage({ user }) {
                 <h1>This is the Homepage</h1>
                 <Link to={`/user/${user._id}`}> <p>Link to User Page</p></Link>
 
-                <div style={{ display: "flex" , width: "inherit", flexWrap: "wrap"} }>
+                <div style={{ display: "flex" , width: "inherit", flexWrap: "wrap" ,maxWidth: "1575px"} }>
                 {artArr.map((artData, idx) => {
                     return (
                         <ArtistCard artData={artData} key={idx} />

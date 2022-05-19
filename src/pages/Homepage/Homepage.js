@@ -32,14 +32,17 @@ export default function Homepage({ user }) {
 
     const loaded = () => {
         return (
-            <div>
+            <div >
                 <h1>This is the Homepage</h1>
                 <Link to={`/user/${user._id}`}> <p>Link to User Page</p></Link>
+
+                <div style={{ display: "flex" , width: "inherit", flexWrap: "wrap"} }>
                 {artArr.map((artData, idx) => {
                     return (
                         <ArtistCard artData={artData} key={idx} />
                     )
                 })}
+                </div>
             </div>
         )
     }
@@ -52,7 +55,7 @@ export default function Homepage({ user }) {
     return (
         user && user.artCollection ? loaded() : loading()
     )
-    
+
 };
 
 // const [ArtCard, setArtCard] = useState({

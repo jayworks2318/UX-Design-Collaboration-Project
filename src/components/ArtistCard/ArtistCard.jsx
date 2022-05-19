@@ -2,10 +2,10 @@ import styles from "./ArtistCard.module.css";
 
 export default function ArtistCard({ artData }) {
     return (
-        <div className={styles.ArtistCard}>
-            <div className="image">
-                <img src={artData.image} />
-            </div>
+        <div className={styles.artCard}>
+            
+                <img style={{height: "inherit", width: "inherit"}} src={artData.image} />
+            
             <div className="btTextBox">
                 {/*justify content spaace between */}
                 <div className="artText">

@@ -6,8 +6,7 @@ import { Link } from "react-router-dom"
 export default function Homepage({ user }) {
     const [artArr, setArtArr] = useState([])
     const [refresh, setRefresh] = useState(false)
-    const getData = () => {
-        (async () => {
+    const getData = async () => {
             try {
                 const response = await axios.get(`/api/art/`)
                 console.log("response is", response)
@@ -23,12 +22,14 @@ export default function Homepage({ user }) {
                 console.log(err)
                 // console.log(`cards is ${cards}`)
             }
-        })()
-    }
+        }
+    
 
     useEffect(() => {
         getData()
     }, [])
+
+
     const loaded = () => {
         return (
             <div>
@@ -46,9 +47,12 @@ export default function Homepage({ user }) {
     const loading = () => {
         return <h1>Loading</h1>
     }
+
+
     return (
         user && user.artCollection ? loaded() : loading()
     )
+    
 };
 
 // const [ArtCard, setArtCard] = useState({
